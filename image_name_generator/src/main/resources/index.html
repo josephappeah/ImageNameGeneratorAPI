@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+		<!--	
+		================================================================
+						justice API html
+						Created on : Jun 23, 2016
+						Author     : jappeah
+		================================================================
+		-->
+    <head>
+
+        <title>Justice API Home</title>
+
+        <!-- Meta + Info  -->
+    	<meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+   		<meta name="description" content="Justice API Landing Page">
+    	<meta name="author" content="Joseph Appeah">
+
+		<!-- Bootstrap + jquery + Animate -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="animate.css">
+        
+        <!-- Custom Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Dosis:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Play:400,100,300,700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        
+        <!-- My Javascript & CSS -->    
+        <script type="text/javascript" src="script.js"></script>
+        <link rel="stylesheet" href="stylesheet.css" type="text/css">
+
+    </head>
+
+    
+    <body>
+
+        <!--navbar-->
+        <nav class="navbar" id="nav">
+            <div class="container-fluid">
+                <a class="navbar-brand" id="navbar-brand"> Justice API </a>
+            </div>
+        </nav>
+
+
+		<!--header-->
+       <header id="api-description">
+            <div class="container-fluid" id="api-description-inner">
+                <p id="intro-text">
+                    Generate descriptive file names for images in your project.
+					<br>
+					<br>
+					<br>
+					<a class="page-scroll btn btn-xl" id="intro-button" >It's free, Try it now!</a>
+                </p>
+				<br>
+				<div id="header-bottom-border"></div>
+				<br>
+            </div>
+        </header>
+		<!--api testing-->
+		<section class="bg-light-gray" id="api_tests">
+			<br>
+			<br>
+			<br>
+
+			<div id="image-update">
+				<div class="container-fluid" id="uploaded-image-div">
+					<p style="text-align:center;"><img id="uploaded-image" src="bus.jpg"/><p>
+				</div>
+
+				<div class="container-fluid" id="image-name-display">
+					<p id="image-name-text">The image name would be <span id="image-name">_a_yellow_bus_</span></p>
+				</div>
+			</div>
+
+			<br>
+			<br>
+			<div class="container-fluid" id="api_tests_inner">
+				<div class="col-lg-6">
+					<p id="image-parameters" ><input id="image-prefix" type="text" placeholder="add a prefix"/></p>
+				</div>
+				<div class="col-lg-6">
+					<p id="image-parameters" ><input id="image-suffix" type="text" placeholder="or a suffix" /></p>
+				</div>
+			</div>
+			<br>
+			<div class="container-fluid" id="upload-button">
+				<a class="page-scroll btn btn-xl" id="pseudo-upload-button" onclick='imageUploadButton()'>select an image</a>
+				<input class="hidden" accept="image/*" type='file' id='file' onchange="readURL(this)"/>
+			</div>
+			<br>
+			<br>
+		</section>
+		
+		
+		<!--api usage information-->
+        <section id="info-and-use">
+            <div class="container-fluid" id="info-and-use-inner">
+                <p id="description-text">
+                	The Justice API allows you to easily generate descriptive names for 
+                	images in your project. It's simple and easy to use. Send an HTTP POST 
+                	request with the image to 107.170.134.121:8082/v1/image_name_generator. 
+                	The Response will be returned in string or text/plain format. Any feedback 
+                	would be much appreciated.
+				</p>
+				
+            </div>
+        </section>
+
+        <!--footer-->
+    	<footer class="footer fixed-bottom">
+      		<div class="container-fluid">
+        		<p id="footer-text" >
+        			<a id="contact-us" href="mailto:josephappeah@gmail.com">Contact Us</a>
+        		</p>
+      		</div>
+    	</footer>
+
+    </body>
+</html>

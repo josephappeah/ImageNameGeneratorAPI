@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:task="http://www.springframework.org/schema/task" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/task		http://www.springframework.org/schema/task/spring-task-3.0.xsd"
+	default-autowire="no">
+	
+		<bean id="DependencyInjector" class="com.josephappeah.corporate.image_name_generator.modules.DependencyHandler" scope="singleton"></bean>
+		<bean id="RequestDelegator" class="com.josephappeah.corporate.image_name_generator.modules.ImageNameGeneratorServiceDelegate" scope="singleton">
+				<constructor-arg ref="DependencyInjector"></constructor-arg>
+		</bean>
+		<bean id="ResponseIntepretor" class="com.josephappeah.corporate.image_name_generator.modules.ImageNameCreator" scope="singleton"></bean>
+		<bean id="HttpHandler" class="com.josephappeah.corporate.image_name_generator.modules.ComputerVisionHttpHandler" scope="singleton"></bean>
+		<bean id="NameGeneratorService" class="com.josephappeah.corporate.image_name_generator.services.ImageNameGeneratorRestService" scope="singleton"></bean>
+		<bean id="ApplicationServer" class="com.josephappeah.corporate.image_name_generator.utils.ImageNameGeneratorServer">
+			<constructor-arg ref="DependencyInjector"></constructor-arg>
+		</bean>
+	
+	</beans>
+	
